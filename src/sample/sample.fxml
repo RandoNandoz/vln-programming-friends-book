@@ -59,6 +59,7 @@
                         <Button mnemonicParsing="false" onMouseClicked="#createFriendAction" prefHeight="27.0" prefWidth="377.0" text="Create Friend">
                            <font>
                               <Font size="16.0" />
+
                            </font>
                         </Button>
                         <Button mnemonicParsing="false" onMouseClicked="#deleteFriendAction" prefHeight="27.0" prefWidth="550.0" text="Delete Friend">
