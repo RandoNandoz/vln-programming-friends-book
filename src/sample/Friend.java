@@ -37,6 +37,18 @@ public class Friend {
     this.notes = notes;
   }
 
+  @Override
+  public String toString() {
+    String closenessName = switch (closeness) {
+      case CLOSENESS_ACQUAINTANCE -> "Acquaintance";
+      case CLOSENESS_FRIEND -> "Friends";
+      case CLOSENESS_BEST_FRIEND -> "Best Friend";
+      case CLOSENESS_INVALID -> "INVALID!!! SOMETHING HAS GONE WRONG!!!";
+      default -> throw new IllegalStateException("Unexpected value: " + closeness);
+    };
+    return "Name: " + name + ", Age: " + age + ", Gender: " + gender + ", Birthdate: " + birthDate + ", Closeness: " + closenessName;
+  }
+
   //<editor-fold desc="Getters and setters">
   public String getName() {
     return name;
