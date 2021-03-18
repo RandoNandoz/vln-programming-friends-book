@@ -1,28 +1,29 @@
 package sample;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Friend {
   // Attributes for the friend.
   private String name;
   private int age;
   private String gender;
-  private final java.util.Date birthDate;
+  private final LocalDate birthDate;
   private int closeness;
+  private String notes;
 
   // Potential options for gender.
-  public final String GENDER_FEMALE = "Female";
-  public final String GENDER_MALE = "Male";
+  public static final String GENDER_FEMALE = "Female";
+  public static final String GENDER_MALE = "Male";
 
   // Potential options for closeness.
-  public final int CLOSENESS_ACQUAINTANCE = 0;
-  public final int CLOSENESS_FRIEND = 1;
-  public final int CLOSENESS_BEST_FRIEND = 2;
+  public static final int CLOSENESS_ACQUAINTANCE = 0;
+  public static final int CLOSENESS_FRIEND = 1;
+  public static final int CLOSENESS_BEST_FRIEND = 2;
   // Invalid case for an invalid value.
-  public final int CLOSENESS_INVALID = -1;
+  public static final int CLOSENESS_INVALID = -1;
 
   // Constructor for the Friend class.
-  public Friend(String name, int age, String gender, Date birthDate, int closeness) {
+  public Friend(String name, int age, String gender, LocalDate birthDate, int closeness, String notes) {
     this.name = name;
     this.age = age;
     this.gender = gender;
@@ -33,6 +34,7 @@ public class Friend {
     } else {
       this.closeness = closeness;
     }
+    this.notes = notes;
   }
 
   //<editor-fold desc="Getters and setters">
@@ -48,12 +50,16 @@ public class Friend {
     return gender;
   }
 
-  public Date getBirthDate() {
+  public LocalDate getBirthDate() {
     return birthDate;
   }
 
   public int getCloseness() {
     return closeness;
+  }
+
+  public String getNotes() {
+    return notes;
   }
 
   public void setName(String name) {
@@ -70,6 +76,10 @@ public class Friend {
 
   public void setCloseness(int closeness) {
     this.closeness = closeness;
+  }
+
+  public void setNotes(String notes) {
+    this.notes = notes;
   }
   //</editor-fold>
 }
