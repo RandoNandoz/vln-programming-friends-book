@@ -39,14 +39,7 @@ public class Friend {
 
   @Override
   public String toString() {
-    String closenessName = switch (closeness) {
-      case CLOSENESS_ACQUAINTANCE -> "Acquaintance";
-      case CLOSENESS_FRIEND -> "Friends";
-      case CLOSENESS_BEST_FRIEND -> "Best Friend";
-      case CLOSENESS_INVALID -> "INVALID!!! SOMETHING HAS GONE WRONG!!!";
-      default -> throw new IllegalStateException("Unexpected value: " + closeness);
-    };
-    return "Name: " + name + ", Age: " + age + ", Gender: " + gender + ", Birthdate: " + birthDate + ", Closeness: " + closenessName;
+    return "Name: " + getName() + ", Age: " + getAge() + ", Gender: " + getGender() + ", Birthdate: " + getBirthDate() + ", Closeness: " + getCloseness();
   }
 
   //<editor-fold desc="Getters and setters">
@@ -66,7 +59,17 @@ public class Friend {
     return birthDate;
   }
 
-  public int getCloseness() {
+  public String getCloseness() {
+    return switch (closeness) {
+      case CLOSENESS_ACQUAINTANCE -> "Acquaintance";
+      case CLOSENESS_FRIEND -> "Friends";
+      case CLOSENESS_BEST_FRIEND -> "Best Friend";
+      case CLOSENESS_INVALID -> "INVALID!!! SOMETHING HAS GONE WRONG!!!";
+      default -> throw new IllegalStateException("Unexpected value: " + closeness);
+    };
+  }
+
+  public int getRawClosenessValue() {
     return closeness;
   }
 

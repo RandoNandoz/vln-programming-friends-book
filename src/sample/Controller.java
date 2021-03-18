@@ -123,7 +123,16 @@ public class Controller {
   // When the "View Friend Details" button is clicked.
 
   public void viewFriendDetailsAction(MouseEvent mouseEvent) {
-
+    Friend selectedFriend = friendList.getSelectionModel().getSelectedItem();
+    if (selectedFriend != null) {
+      nameField.setText(selectedFriend.getName());
+      ageField.setText(String.valueOf(selectedFriend.getAge()));
+      genderField.setText(selectedFriend.getGender());
+      birthdateCalendarPicker.setValue(selectedFriend.getBirthDate());
+      birthdateCalendarPicker.setDisable(true);
+      closenessDropdown.setText(selectedFriend.getCloseness());
+      notesField.setText(selectedFriend.getNotes());
+    }
   }
   // When the acquaintance bit on the closeness dropdown is clicked.
 
@@ -147,5 +156,9 @@ public class Controller {
     alert.setHeaderText("Invalid Option");
     alert.setContentText(msg);
     alert.show();
+  }
+
+  public void editFriendAction(MouseEvent mouseEvent) {
+    Friend selectedFriend = friendList.getSelectionModel().getSelectedItem();
   }
 }
