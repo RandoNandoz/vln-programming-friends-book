@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab text="Friend Manager">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="330.0" spacing="20.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <TextField fx:id="nameField" promptText="Name">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="ageField" promptText="Age">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="genderField" promptText="Gender">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <DatePicker fx:id="birthdateCalendarPicker" prefHeight="27.0" prefWidth="419.0" promptText="Birthdate (YYYY-MM-DD)" style="-fx-font-size: 16;" />
+                        <MenuButton fx:id="closenessDropdown" mnemonicParsing="false" prefHeight="27.0" prefWidth="502.0" text="Closeness">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Acquaintance" />
+                            <MenuItem mnemonicParsing="false" text="Friend" />
+                              <MenuItem mnemonicParsing="false" text="Best Friend" />
+                          </items>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </MenuButton>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
       </content>
     </Tab>
     <Tab text="Details">

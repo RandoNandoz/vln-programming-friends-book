@@ -17,7 +17,7 @@ public class Friend {
   // Potential options for closeness.
   public final int CLOSENESS_ACQUAINTANCE = 0;
   public final int CLOSENESS_FRIEND = 1;
-  public final int CLOSENESS_BESTIE = 2;
+  public final int CLOSENESS_BEST_FRIEND = 2;
   // Invalid case for an invalid value.
   public final int CLOSENESS_INVALID = -1;
 
@@ -28,7 +28,7 @@ public class Friend {
     this.gender = gender;
     this.birthDate = birthDate;
     // If the closeness is not any of the valid cases for closeness, assign it the invalid case.
-    if (closeness != CLOSENESS_ACQUAINTANCE && closeness != CLOSENESS_FRIEND && closeness != CLOSENESS_BESTIE) {
+    if (closeness != CLOSENESS_ACQUAINTANCE && closeness != CLOSENESS_FRIEND && closeness != CLOSENESS_BEST_FRIEND) {
       this.closeness = CLOSENESS_INVALID;
     } else {
       this.closeness = closeness;
