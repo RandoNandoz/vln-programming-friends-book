@@ -1,87 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<TabPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
+         prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="sample.Controller">
+    <tabs>
+        <Tab text="Friend Manager">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="330.0" spacing="20.0" AnchorPane.bottomAnchor="200.0"
+                              AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="930.0" AnchorPane.topAnchor="14.0">
+                            <children>
+                                <TextField fx:id="nameField" promptText="Name">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="ageField" promptText="Age">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="genderField" promptText="Gender">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </TextField>
+                                <DatePicker fx:id="birthdateCalendarPicker" prefHeight="27.0" prefWidth="419.0" promptText="Birthdate (YYYY-MM-DD)"
+                                            style="-fx-font-size: 16;"/>
+                                <MenuButton fx:id="closenessDropdown" mnemonicParsing="false" prefHeight="27.0" prefWidth="502.0" text="Closeness">
+                                    <items>
+                                        <MenuItem fx:id="acquaintanceItem" mnemonicParsing="false" onAction="#acquaintanceItemClicked" text="Acquaintance"/>
+                                        <MenuItem fx:id="friendItem" mnemonicParsing="false" onAction="#friendItemClicked" text="Friend"/>
+                                        <MenuItem fx:id="bestFriendItem" mnemonicParsing="false" onAction="#bestFriendItemClicked" text="Best Friend"/>
+                                    </items>
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </MenuButton>
+                                <TextArea fx:id="notesField" prefHeight="217.0" prefWidth="330.0" promptText="Notes">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </TextArea>
+                            </children>
+                        </VBox>
+                        <VBox alignment="BOTTOM_LEFT" layoutX="66.0" layoutY="487.0" prefHeight="173.0" prefWidth="335.0" spacing="15.0"
+                              AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="930.0" AnchorPane.topAnchor="500.0">
+                            <children>
+                                <Button mnemonicParsing="false" onMouseClicked="#createFriendAction" prefHeight="27.0" prefWidth="377.0" text="Create Friend">
+                                    <font>
+                                        <Font size="16.0"/>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-  <tabs>
-    <Tab text="Friend Manager">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="330.0" spacing="20.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="930.0" AnchorPane.topAnchor="14.0">
-                     <children>
-                        <TextField fx:id="nameField" promptText="Name">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="ageField" promptText="Age">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="genderField" promptText="Gender">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <DatePicker fx:id="birthdateCalendarPicker" prefHeight="27.0" prefWidth="419.0" promptText="Birthdate (YYYY-MM-DD)" style="-fx-font-size: 16;" />
-                        <MenuButton fx:id="closenessDropdown" mnemonicParsing="false" prefHeight="27.0" prefWidth="502.0" text="Closeness">
-                          <items>
-                            <MenuItem fx:id="acquaintanceItem" mnemonicParsing="false" onAction="#acquaintanceItemClicked" text="Acquaintance" />
-                            <MenuItem fx:id="friendItem" mnemonicParsing="false" onAction="#friendItemClicked" text="Friend" />
-                              <MenuItem fx:id="bestFriendItem" mnemonicParsing="false" onAction="#bestFriendItemClicked" text="Best Friend" />
-                          </items>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </MenuButton>
-                        <TextArea fx:id="notesField" prefHeight="217.0" prefWidth="330.0" promptText="Notes">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextArea>
-                     </children>
-                  </VBox>
-                  <VBox alignment="BOTTOM_LEFT" layoutX="66.0" layoutY="487.0" prefHeight="173.0" prefWidth="335.0" spacing="15.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="930.0" AnchorPane.topAnchor="500.0">
-                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#createFriendAction" prefHeight="27.0" prefWidth="377.0" text="Create Friend">
-                           <font>
-                              <Font size="16.0" />
-
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onMouseClicked="#deleteFriendAction" prefHeight="27.0" prefWidth="550.0" text="Delete Friend">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onMouseClicked="#viewFriendDetailsAction" prefHeight="27.0" prefWidth="513.0" text="View Friend Details">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onMouseClicked="#editFriendAction" prefHeight="32.0" prefWidth="408.0" text="Edit Friend">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </VBox>
-                  <ListView fx:id="friendList" layoutX="371.0" layoutY="14.0" prefHeight="658.0" prefWidth="895.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
-               </children></AnchorPane>
-      </content>
-    </Tab>
-  </tabs>
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onMouseClicked="#deleteFriendAction" prefHeight="27.0" prefWidth="550.0" text="Delete Friend">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onMouseClicked="#viewFriendDetailsAction" prefHeight="27.0" prefWidth="513.0"
+                                        text="View Friend Details">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onMouseClicked="#editFriendAction" prefHeight="32.0" prefWidth="408.0" text="Edit Friend">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <ListView fx:id="friendList" layoutX="371.0" layoutY="14.0" prefHeight="658.0" prefWidth="895.0" AnchorPane.bottomAnchor="14.0"
+                                  AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0"/>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
 </TabPane>

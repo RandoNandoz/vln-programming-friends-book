@@ -130,10 +130,10 @@ public class Controller {
   private String getGender(TextField textField, HashSet<String> wordsForFemale, HashSet<String> wordsForMale) {
 
     /*
-    * One may ask: Why HashSet?
-    * Now, isn't that a great question. See, with an ArrayList, the ArrayList.contains(Object) method is in O(n), while HashSet.contains(Object) is O(1).
-    * The lookup speed is constant, making it better. However, it doesn't really matter for like 4 items. Oh well.
-    * */
+     * One may ask: Why HashSet?
+     * Now, isn't that a great question. See, with an ArrayList, the ArrayList.contains(Object) method is in O(n), while HashSet.contains(Object) is O(1).
+     * The lookup speed is constant, making it better. However, it doesn't really matter for like 4 items. Oh well.
+     * */
 
     // This function gets the gender from the TextField which is provided to it.
     String returnVal;
